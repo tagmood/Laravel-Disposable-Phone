@@ -3,7 +3,6 @@
 namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Support\Str;
 
 class DisposableNumbers
 {
@@ -158,7 +157,7 @@ class DisposableNumbers
      */
     public function isDisposable($phone)
     {
-        if ($phone = Str::replace('+', '', $phone)) {
+        if ($phone = str_replace('+', '', $phone)) {
             return in_array($phone, $this->numbers);
         }
 
