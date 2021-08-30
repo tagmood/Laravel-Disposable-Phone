@@ -158,7 +158,7 @@ class DisposableNumbers
     public function isDisposable($phone)
     {
         if ($phone = Str::replace('+', '', $phone)) {
-            return in_array($number, $this->numbers);
+            return in_array($phone, $this->numbers);
         }
 
         // Just ignore this validator if the value doesn't even resemble an phone or number.
