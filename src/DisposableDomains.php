@@ -1,6 +1,6 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail;
+namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Support\Arr;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Facades;
+namespace Tagmood\LaravelDisposablePhone\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

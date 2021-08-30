@@ -1,6 +1,6 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Tests;
+namespace Tagmood\LaravelDisposablePhone\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

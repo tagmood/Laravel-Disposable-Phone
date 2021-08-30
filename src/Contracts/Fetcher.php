@@ -1,6 +1,6 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Contracts;
+namespace Tagmood\LaravelDisposablePhone\Contracts;
 
 interface Fetcher
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Console;
+namespace Tagmood\LaravelDisposablePhone\Console;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Console\Command;
-use Propaganistas\LaravelDisposableEmail\Contracts\Fetcher;
-use Propaganistas\LaravelDisposableEmail\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\Contracts\Fetcher;
+use Tagmood\LaravelDisposablePhone\DisposableDomains;
 
 class UpdateDisposableDomainsCommand extends Command
 {

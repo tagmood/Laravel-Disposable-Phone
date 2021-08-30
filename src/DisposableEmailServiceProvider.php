@@ -1,10 +1,10 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail;
+namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Support\ServiceProvider;
-use Propaganistas\LaravelDisposableEmail\Console\UpdateDisposableDomainsCommand;
-use Propaganistas\LaravelDisposableEmail\Validation\Indisposable;
+use Tagmood\LaravelDisposablePhone\Console\UpdateDisposableDomainsCommand;
+use Tagmood\LaravelDisposablePhone\Validation\Indisposable;
 
 class DisposableEmailServiceProvider extends ServiceProvider
 {

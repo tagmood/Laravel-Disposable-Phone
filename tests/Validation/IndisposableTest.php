@@ -1,9 +1,9 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Tests\Validation;
+namespace Tagmood\LaravelDisposablePhone\Tests\Validation;
 
-use Propaganistas\LaravelDisposableEmail\Tests\TestCase;
-use Propaganistas\LaravelDisposableEmail\Validation\Indisposable;
+use Tagmood\LaravelDisposablePhone\Tests\TestCase;
+use Tagmood\LaravelDisposablePhone\Validation\Indisposable;
 
 class IndisposableTest extends TestCase
 {

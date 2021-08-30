@@ -1,8 +1,8 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Tests;
+namespace Tagmood\LaravelDisposablePhone\Tests;
 
-use Propaganistas\LaravelDisposableEmail\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\DisposableDomains;
 
 class DisposableDomainsTest extends TestCase
 {

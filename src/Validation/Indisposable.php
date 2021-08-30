@@ -1,8 +1,8 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Validation;
+namespace Tagmood\LaravelDisposablePhone\Validation;
 
-use Propaganistas\LaravelDisposableEmail\Facades\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\Facades\DisposableDomains;
 
 class Indisposable
 {

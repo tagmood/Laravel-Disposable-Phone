@@ -1,10 +1,10 @@
 <?php
 
-namespace Propaganistas\LaravelDisposableEmail\Tests\Console;
+namespace Tagmood\LaravelDisposablePhone\Tests\Console;
 
 use InvalidArgumentException;
-use Propaganistas\LaravelDisposableEmail\Contracts\Fetcher;
-use Propaganistas\LaravelDisposableEmail\Tests\TestCase;
+use Tagmood\LaravelDisposablePhone\Contracts\Fetcher;
+use Tagmood\LaravelDisposablePhone\Tests\TestCase;
 
 class UpdateDisposableDomainsCommandTest extends TestCase
 {
