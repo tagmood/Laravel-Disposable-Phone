@@ -21,7 +21,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
         $domains = $this->disposable()->getDomains();
 
         $this->assertIsArray($domains);
-        $this->assertContains('yopmail.com', $domains);
+        $this->assertContains('393399957039', $domains);
     }
 
     /** @test */
@@ -37,7 +37,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
         $domains = $this->disposable()->getDomains();
 
         $this->assertIsArray($domains);
-        $this->assertContains('yopmail.com', $domains);
+        $this->assertContains('393399957039', $domains);
         $this->assertNotContains('foo', $domains);
     }
 

@@ -83,7 +83,7 @@ class DisposableNumbersTest extends TestCase
 
         $this->assertIsArray($domains);
         $this->assertNull($this->app['cache.store'][$this->disposable()->getCacheKey()]);
-        $this->assertContains('yopmail.com',  $domains);
+        $this->assertContains('393399957039',  $domains);
     }
 
     /** @test */
@@ -108,7 +108,7 @@ class DisposableNumbersTest extends TestCase
         $domains = $this->disposable()->getDomains();
 
         $this->assertIsArray($domains);
-        $this->assertContains('yopmail.com', $domains);
+        $this->assertContains('393399957039', $domains);
     }
 
     /** @test */
@@ -144,13 +144,13 @@ class DisposableNumbersTest extends TestCase
     /** @test */
     public function it_can_verify_disposability()
     {
-        $this->assertTrue($this->disposable()->isDisposable('example@yopmail.com'));
-        $this->assertFalse($this->disposable()->isNotDisposable('example@yopmail.com'));
-        $this->assertFalse($this->disposable()->isIndisposable('example@yopmail.com'));
+        $this->assertTrue($this->disposable()->isDisposable('393399957039'));
+        $this->assertFalse($this->disposable()->isNotDisposable('393399957039'));
+        $this->assertFalse($this->disposable()->isIndisposable('393399957039'));
 
-        $this->assertFalse($this->disposable()->isDisposable('example@gmail.com'));
-        $this->assertTrue($this->disposable()->isNotDisposable('example@gmail.com'));
-        $this->assertTrue($this->disposable()->isIndisposable('example@gmail.com'));
+        $this->assertFalse($this->disposable()->isDisposable('393491234567'));
+        $this->assertTrue($this->disposable()->isNotDisposable('393491234567'));
+        $this->assertTrue($this->disposable()->isIndisposable('393491234567'));
     }
 
     /** @test */
