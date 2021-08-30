@@ -19,7 +19,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('disposable-email.storage', $this->storagePath);
+        $app['config']->set('disposable-phone.storage', $this->storagePath);
     }
 
     /**

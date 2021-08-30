@@ -35,7 +35,7 @@ class UpdateDisposableNumbersCommand extends Command
         $this->line('Fetching from source...');
 
         $fetcher = $this->laravel->make(
-            $fetcherClass = $config->get('disposable-email.fetcher')
+            $fetcherClass = $config->get('disposable-phone.fetcher')
         );
 
         if (! $fetcher instanceof Fetcher) {
@@ -44,7 +44,7 @@ class UpdateDisposableNumbersCommand extends Command
         }
 
         $data = $this->laravel->call([$fetcher, 'handle'], [
-            'url' => $config->get('disposable-email.source'),
+            'url' => $config->get('disposable-phone.source'),
         ]);
 
         $this->line('Saving response to storage...');

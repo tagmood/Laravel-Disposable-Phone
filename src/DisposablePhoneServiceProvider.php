@@ -13,7 +13,7 @@ class DisposablePhoneServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $config = __DIR__.'/../config/disposable-email.php';
+    protected $config = __DIR__.'/../config/disposable-phone.php';
 
     /**
      * Bootstrap the application services.
@@ -27,8 +27,8 @@ class DisposablePhoneServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            $this->config => config_path('disposable-email.php'),
-        ], 'laravel-disposable-email');
+            $this->config => config_path('disposable-phone.php'),
+        ], 'laravel-disposable-phone');
 
         $this->app['validator']->extend('indisposable', Indisposable::class.'@validate', Indisposable::$errorMessage);
     }
@@ -40,19 +40,19 @@ class DisposablePhoneServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->config, 'disposable-email');
+        $this->mergeConfigFrom($this->config, 'disposable-phone');
 
         $this->app->singleton('disposable_email.domains', function ($app) {
             // Only build and pass the requested cache store if caching is enabled.
-            if ($app['config']['disposable-email.cache.enabled']) {
-                $store = $app['config']['disposable-email.cache.store'];
+            if ($app['config']['disposable-phone.cache.enabled']) {
+                $store = $app['config']['disposable-phone.cache.store'];
                 $cache = $app['cache']->store($store == 'default' ? $app['config']['cache.default'] : $store);
             }
 
             $instance = new DisposableNumbers($cache ?? null);
 
-            $instance->setStoragePath($app['config']['disposable-email.storage']);
-            $instance->setCacheKey($app['config']['disposable-email.cache.key']);
+            $instance->setStoragePath($app['config']['disposable-phone.storage']);
+            $instance->setCacheKey($app['config']['disposable-phone.cache.key']);
 
             return $instance->bootstrap();
         });

@@ -22,7 +22,7 @@ class DisposableNumbersTest extends TestCase
     public function it_can_get_storage_path()
     {
         $this->assertEquals(
-            $this->app['config']['disposable-email.storage'],
+            $this->app['config']['disposable-phone.storage'],
             $this->disposable()->getStoragePath()
         );
     }
@@ -39,7 +39,7 @@ class DisposableNumbersTest extends TestCase
     public function it_can_get_cache_key()
     {
         $this->assertEquals(
-            $this->app['config']['disposable-email.cache.key'],
+            $this->app['config']['disposable-phone.cache.key'],
             $this->disposable()->getCacheKey()
         );
     }
@@ -77,7 +77,7 @@ class DisposableNumbersTest extends TestCase
     /** @test */
     public function it_skips_cache_when_configured()
     {
-        $this->app['config']['disposable-email.cache.enabled'] = false;
+        $this->app['config']['disposable-phone.cache.enabled'] = false;
 
         $domains = $this->disposable()->getDomains();
 
@@ -89,7 +89,7 @@ class DisposableNumbersTest extends TestCase
     /** @test */
     public function it_takes_storage_domains_when_cache_is_not_available()
     {
-        $this->app['config']['disposable-email.cache.enabled'] = false;
+        $this->app['config']['disposable-phone.cache.enabled'] = false;
 
         file_put_contents($this->storagePath, json_encode(['foo']));
 
@@ -103,7 +103,7 @@ class DisposableNumbersTest extends TestCase
     /** @test */
     public function it_takes_package_domains_when_storage_is_not_available()
     {
-        $this->app['config']['disposable-email.cache.enabled'] = false;
+        $this->app['config']['disposable-phone.cache.enabled'] = false;
 
         $domains = $this->disposable()->getDomains();
 

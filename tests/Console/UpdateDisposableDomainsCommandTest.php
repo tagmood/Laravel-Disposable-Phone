@@ -49,7 +49,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         file_put_contents($this->storagePath, json_encode(['foo']));
 
-        $this->app['config']['disposable-email.source'] = null;
+        $this->app['config']['disposable-phone.source'] = null;
 
         $this->artisan('disposable:update')
             ->assertExitCode(1);
@@ -65,8 +65,8 @@ class UpdateDisposableNumbersCommandTest extends TestCase
     {
         file_put_contents($this->storagePath, json_encode(['foo']));
 
-        $this->app['config']['disposable-email.source'] = 'bar';
-        $this->app['config']['disposable-email.fetcher'] = InvalidFetcher::class;
+        $this->app['config']['disposable-phone.source'] = 'bar';
+        $this->app['config']['disposable-phone.fetcher'] = InvalidFetcher::class;
 
         $this->artisan('disposable:update')
             ->assertExitCode(1);
@@ -82,8 +82,8 @@ class UpdateDisposableNumbersCommandTest extends TestCase
     {
         file_put_contents($this->storagePath, json_encode(['foo']));
 
-        $this->app['config']['disposable-email.source'] = 'bar';
-        $this->app['config']['disposable-email.fetcher'] = CustomFetcher::class;
+        $this->app['config']['disposable-phone.source'] = 'bar';
+        $this->app['config']['disposable-phone.fetcher'] = CustomFetcher::class;
 
         $this->artisan('disposable:update')
             ->assertExitCode(0);
