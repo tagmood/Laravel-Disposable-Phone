@@ -116,11 +116,12 @@ class DisposableNumbers
      */
     protected function getFromStorage()
     {
-        $numbers = is_file($this->getStoragePath())
-            ? file_get_contents($this->getStoragePath())
-            : file_get_contents(__DIR__.'/../number-list.json');
-
-        return json_decode($numbers, true);
+        if(is_file($this->getStoragePath())) {
+            return json_decode(file_get_contents($this->getStoragePath()), true);
+        }
+        else {
+            return array_keys(json_decode(file_get_contents(__DIR__.'/../number-list.json'), true));
+        }
     }
 
     /**
