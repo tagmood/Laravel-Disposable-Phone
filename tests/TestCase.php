@@ -67,11 +67,11 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getPackageAliases($app)
     {
-        return ['Indisposable' => 'Tagmood\LaravelDisposablePhone\Facades\DisposableDomains'];
+        return ['Indisposable' => 'Tagmood\LaravelDisposablePhone\Facades\DisposableNumbers'];
     }
 
     /**
-     * @return \Tagmood\LaravelDisposablePhone\DisposableDomains
+     * @return \Tagmood\LaravelDisposablePhone\DisposableNumbers
      */
     protected function disposable()
     {

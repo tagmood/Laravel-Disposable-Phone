@@ -6,7 +6,7 @@ use InvalidArgumentException;
 use Tagmood\LaravelDisposablePhone\Contracts\Fetcher;
 use Tagmood\LaravelDisposablePhone\Tests\TestCase;
 
-class UpdateDisposableDomainsCommandTest extends TestCase
+class UpdateDisposableNumbersCommandTest extends TestCase
 {
     /** @test */
     public function it_creates_the_file()

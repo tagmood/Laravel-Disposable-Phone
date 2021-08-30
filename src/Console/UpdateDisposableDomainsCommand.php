@@ -5,9 +5,9 @@ namespace Tagmood\LaravelDisposablePhone\Console;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Console\Command;
 use Tagmood\LaravelDisposablePhone\Contracts\Fetcher;
-use Tagmood\LaravelDisposablePhone\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\DisposableNumbers;
 
-class UpdateDisposableDomainsCommand extends Command
+class UpdateDisposableNumbersCommand extends Command
 {
     /**
      * The name and signature of the console command.
@@ -27,10 +27,10 @@ class UpdateDisposableDomainsCommand extends Command
      * Execute the console command.
      *
      * @param  \Illuminate\Contracts\Config\Repository  $config
-     * @param  \Tagmood\LaravelDisposablePhone\DisposableDomains  $disposable
+     * @param  \Tagmood\LaravelDisposablePhone\DisposableNumbers  $disposable
      * @return  void
      */
-    public function handle(Config $config, DisposableDomains $disposable)
+    public function handle(Config $config, DisposableNumbers $disposable)
     {
         $this->line('Fetching from source...');
 

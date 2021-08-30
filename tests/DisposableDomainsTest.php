@@ -2,20 +2,20 @@
 
 namespace Tagmood\LaravelDisposablePhone\Tests;
 
-use Tagmood\LaravelDisposablePhone\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\DisposableNumbers;
 
-class DisposableDomainsTest extends TestCase
+class DisposableNumbersTest extends TestCase
 {
     /** @test */
     public function it_can_be_resolved_using_alias()
     {
-        $this->assertEquals(DisposableDomains::class, get_class($this->app->make('disposable_email.domains')));
+        $this->assertEquals(DisposableNumbers::class, get_class($this->app->make('disposable_email.domains')));
     }
 
     /** @test */
     public function it_can_be_resolved_using_class()
     {
-        $this->assertEquals(DisposableDomains::class, get_class($this->app->make(DisposableDomains::class)));
+        $this->assertEquals(DisposableNumbers::class, get_class($this->app->make(DisposableNumbers::class)));
     }
 
     /** @test */

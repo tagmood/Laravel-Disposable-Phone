@@ -6,7 +6,7 @@ use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class DisposableDomains
+class DisposableNumbers
 {
     /**
      * The storage path to retrieve from and save to.

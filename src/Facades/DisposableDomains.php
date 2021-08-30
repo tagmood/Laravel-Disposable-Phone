@@ -4,7 +4,7 @@ namespace Tagmood\LaravelDisposablePhone\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class DisposableDomains extends Facade
+class DisposableNumbers extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -3,7 +3,7 @@
 namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Support\ServiceProvider;
-use Tagmood\LaravelDisposablePhone\Console\UpdateDisposableDomainsCommand;
+use Tagmood\LaravelDisposablePhone\Console\UpdateDisposableNumbersCommand;
 use Tagmood\LaravelDisposablePhone\Validation\Indisposable;
 
 class DisposablePhoneServiceProvider extends ServiceProvider
@@ -23,7 +23,7 @@ class DisposablePhoneServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands(UpdateDisposableDomainsCommand::class);
+            $this->commands(UpdateDisposableNumbersCommand::class);
         }
 
         $this->publishes([
@@ -49,7 +49,7 @@ class DisposablePhoneServiceProvider extends ServiceProvider
                 $cache = $app['cache']->store($store == 'default' ? $app['config']['cache.default'] : $store);
             }
 
-            $instance = new DisposableDomains($cache ?? null);
+            $instance = new DisposableNumbers($cache ?? null);
 
             $instance->setStoragePath($app['config']['disposable-email.storage']);
             $instance->setCacheKey($app['config']['disposable-email.cache.key']);
@@ -57,6 +57,6 @@ class DisposablePhoneServiceProvider extends ServiceProvider
             return $instance->bootstrap();
         });
 
-        $this->app->alias('disposable_email.domains', DisposableDomains::class);
+        $this->app->alias('disposable_email.domains', DisposableNumbers::class);
     }
 }

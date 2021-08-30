@@ -2,7 +2,7 @@
 
 namespace Tagmood\LaravelDisposablePhone\Validation;
 
-use Tagmood\LaravelDisposablePhone\Facades\DisposableDomains;
+use Tagmood\LaravelDisposablePhone\Facades\DisposableNumbers;
 
 class Indisposable
 {
@@ -24,6 +24,6 @@ class Indisposable
      */
     public function validate($attribute, $value, $parameters, $validator)
     {
-        return DisposableDomains::isNotDisposable($value);
+        return DisposableNumbers::isNotDisposable($value);
     }
 }
