@@ -1,19 +1,14 @@
-# Laravel Disposable Email
+# Laravel Disposable Phone
 
-![Tests](https://github.com/Propaganistas/Laravel-Disposable-Email/workflows/Tests/badge.svg?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/propaganistas/laravel-disposable-email/v/stable)](https://packagist.org/packages/propaganistas/laravel-disposable-email)
-[![Total Downloads](https://poser.pugx.org/propaganistas/laravel-disposable-email/downloads)](https://packagist.org/packages/propaganistas/laravel-disposable-email)
-[![License](https://poser.pugx.org/propaganistas/laravel-disposable-email/license)](https://packagist.org/packages/propaganistas/laravel-disposable-email)
-
-Adds a validator to Laravel for checking whether a given email address isn't originating from disposable email services such as `Mailinator`, `Guerillamail`, ...
-Uses the disposable domains blacklist from [andreis/disposable-email-domains](https://github.com/andreis/disposable-email-domains) by default.
+Adds a validator to Laravel for checking whether a given phone number isn't originating from disposable phone services.
+Uses the disposable numbers blacklist from [iP1SMS/disposable-phone-numbers](https://github.com/iP1SMS/disposable-phone-numbers) by default.
 
 ### Installation
 
 1. Run the Composer require command to install the package:
 
     ```bash
-    composer require propaganistas/laravel-disposable-email
+    composer require tagmood/laravel-disposable-phone
     ```
 
 2. If you don't use auto-discovery, open up your app config and add the Service Provider to the `$providers` array:
@@ -22,46 +17,46 @@ Uses the disposable domains blacklist from [andreis/disposable-email-domains](ht
     'providers' => [
         ...
      
-        Propaganistas\LaravelDisposableEmail\DisposableEmailServiceProvider::class,
+        Tagmood\LaravelDisposablePhone\DisposablePhoneServiceProvider::class,
     ],
     ```
 
 3. Publish the configuration file and adapt the configuration as desired:
 
 	```bash
-    php artisan vendor:publish --tag=laravel-disposable-email
+    php artisan vendor:publish --tag=laravel-disposable-phone
     ```
 
-4. Run the following artisan command to fetch an up-to-date list of disposable domains:
+4. Run the following artisan command to fetch an up-to-date list of disposable numbers:
     
     ```bash
-    php artisan disposable:update
+    php artisan disposablephone:update
     ```
 
 5. (optional) In your languages directory, add for each language an extra language line for the validator:
 
 	```php
-	'indisposable' => 'Disposable email addresses are not allowed.',
+	'indisposablephone' => 'Disposable phone numbers are not allowed.',
 	```
 
-6. (optional) It's highly advised to update the disposable domains list regularly. You can either run the command yourself now and then or, if you make use of Laravel's scheduler, include it over there (`App\Console\Kernel`):
+6. (optional) It's highly advised to update the disposable numbers list regularly. You can either run the command yourself now and then or, if you make use of Laravel's scheduler, include it over there (`App\Console\Kernel`):
     
     ```php
     protected function schedule(Schedule $schedule)
 	{
-        $schedule->command('disposable:update')->weekly();
+        $schedule->command('disposablephone:update')->weekly();
 	}
     ```
 
 ### Usage
 
-Use the `indisposable` validator to ensure a given field doesn't hold a disposable email address. You'll probably want to add it after the `email` validator to make sure a valid email is passed through:
+Use the `indisposablephone` validator to ensure a given field doesn't hold a disposable phone number. You'll probably want to add it after the `phone` validator to make sure a valid phone number is passed through:
 
 ```php
-'field' => 'email|indisposable',
+'field' => 'phone|indisposablephone',
 ```
 
 ### Custom fetches
 
 By default the package retrieves a new list by using `file_get_contents()`. 
-If your application has different needs (e.g. when behind a proxy) please review the `disposable-email.fetcher` configuration value.
+If your application has different needs (e.g. when behind a proxy) please review the `disposable-phone.fetcher` configuration value.
