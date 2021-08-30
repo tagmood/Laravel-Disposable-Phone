@@ -30,7 +30,7 @@ class DisposablePhoneServiceProvider extends ServiceProvider
             $this->config => config_path('disposable-phone.php'),
         ], 'laravel-disposable-phone');
 
-        $this->app['validator']->extend('indisposable', Indisposable::class.'@validate', Indisposable::$errorMessage);
+        $this->app['validator']->extend('indisposablephone', Indisposable::class.'@validate', Indisposable::$errorMessage);
     }
 
     /**

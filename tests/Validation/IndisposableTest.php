@@ -28,8 +28,8 @@ class IndisposableTest extends TestCase
     /** @test */
     public function it_is_usable_through_the_validator()
     {
-        $passingValidation = $this->app['validator']->make(['email' => 'example@gmail.com'], ['email' => 'indisposable']);
-        $failingValidation = $this->app['validator']->make(['email' => 'example@yopmail.com'], ['email' => 'indisposable']);
+        $passingValidation = $this->app['validator']->make(['email' => 'example@gmail.com'], ['phone' => 'indisposablephone']);
+        $failingValidation = $this->app['validator']->make(['email' => 'example@yopmail.com'], ['phone' => 'indisposablephone']);
 
         $this->assertTrue($passingValidation->passes());
         $this->assertTrue($failingValidation->fails());
