@@ -118,7 +118,7 @@ class DisposableNumbersTest extends TestCase
 
         $this->disposable()->flushStorage();
 
-        $this->assertFileDoesNotExist($this->storagePath);
+        $this->assertFileNotExist($this->storagePath);
     }
 
     /** @test */
