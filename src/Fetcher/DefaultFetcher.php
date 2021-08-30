@@ -24,7 +24,7 @@ class DefaultFetcher implements Fetcher
             throw new UnexpectedValueException('Provided data could not be parsed as JSON');
         }
 
-        return array_keys(json_decode($content));
+        return array_keys(json_decode($content, true));
     }
 
     protected function isValidJson($data): bool
