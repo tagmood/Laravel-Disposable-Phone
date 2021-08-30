@@ -157,7 +157,8 @@ class DisposableNumbersTest extends TestCase
     public function it_checks_the_full_phone_number()
     {
         $this->assertTrue($this->disposable()->isDisposable('393399957039'));
-        $this->assertTrue($this->disposable()->isDisposable('393399957039'));
+        $this->assertTrue($this->disposable()->isDisposable('+393399957039'));
         $this->assertTrue($this->disposable()->isNotDisposable('393491234567'));
+        $this->assertTrue($this->disposable()->isNotDisposable('+393491234567'));
     }
 }
