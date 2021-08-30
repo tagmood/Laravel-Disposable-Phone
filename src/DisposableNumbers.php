@@ -60,7 +60,7 @@ class DisposableNumbers
             );
         }
 
-        $this->numbers = array_keys($numbers);
+        $this->numbers = $numbers;
 
         return $this;
     }
@@ -158,7 +158,7 @@ class DisposableNumbers
     public function isDisposable($phone)
     {
         if ($phone = Str::replace('+', '', $phone)) {
-            return in_array($phone, $this->numbers);
+            return array_key_exists($phone, $this->numbers);
         }
 
         // Just ignore this validator if the value doesn't even resemble an phone or number.
