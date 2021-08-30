@@ -11,7 +11,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
     /** @test */
     public function it_creates_the_file()
     {
-        $this->assertFileNotExist($this->storagePath);
+        $this->assertFileNotExists($this->storagePath);
 
         $this->artisan('disposablephone:update')
             ->assertExitCode(0);
