@@ -157,7 +157,7 @@ class DisposableNumbers
      */
     public function isDisposable($phone)
     {
-        if ($phone = Str::replace('+', '', $phone)) {
+        if ($phone = str_replace('+', '', $phone)) {
             return array_key_exists($phone, $this->numbers);
         }
 
