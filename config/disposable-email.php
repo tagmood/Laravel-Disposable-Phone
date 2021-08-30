@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'source' => 'https://cdn.jsdelivr.net/gh/andreis/disposable-email-domains@master/domains.json',
+    'source' => 'https://cdn.jsdelivr.net/gh/iP1SMS/disposable-phone-numbers@master/number-list.json',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'storage' => storage_path('framework/disposable_domains.json'),
+    'storage' => storage_path('framework/disposable_number-list.json'),
 
     /*
     |--------------------------------------------------------------------------

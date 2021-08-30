@@ -119,7 +119,7 @@ class DisposableDomains
     {
         $domains = is_file($this->getStoragePath())
             ? file_get_contents($this->getStoragePath())
-            : file_get_contents(__DIR__.'/../domains.json');
+            : file_get_contents(__DIR__.'/../number-list.json');
 
         return json_decode($domains, true);
     }

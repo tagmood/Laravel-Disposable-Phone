@@ -1,4 +1,4 @@
-name: Update domains.json
+name: Update number-list.json
 
 on:
   workflow_dispatch:
@@ -18,14 +18,14 @@ jobs:
     - name: Download new file
       uses: wei/curl@v1
       with:
-        args: https://cdn.jsdelivr.net/gh/andreis/disposable-email-domains@master/domains.json --output domains.json
+        args: https://cdn.jsdelivr.net/gh/iP1SMS/disposable-phone-numbers@master/number-list.json --output number-list.json
 
     - name: Push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         branch: master
-        file_pattern: domains.json
-        commit_message: "[AUTO] Update domains.json"
+        file_pattern: number-list.json
+        commit_message: "[AUTO] Update number-list.json"
   
     - name: Bump version and push tag
       id: tag_version

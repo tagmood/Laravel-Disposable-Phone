@@ -9,7 +9,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * @var string
      */
-    protected $storagePath = __DIR__.'/domains.json';
+    protected $storagePath = __DIR__.'/number-list.json';
 
     /**
      * Define environment setup.
