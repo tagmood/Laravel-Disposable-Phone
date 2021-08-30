@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Tagmood\LaravelDisposablePhone\Console\UpdateDisposableDomainsCommand;
 use Tagmood\LaravelDisposablePhone\Validation\Indisposable;
 
-class DisposableEmailServiceProvider extends ServiceProvider
+class DisposablePhoneServiceProvider extends ServiceProvider
 {
     /**
      * The config source path.

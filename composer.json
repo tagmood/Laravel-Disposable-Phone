@@ -41,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tagmood\\LaravelDisposablePhone\\DisposableEmailServiceProvider"
+                "Tagmood\\LaravelDisposablePhone\\DisposablePhoneServiceProvider"
             ]
         }
     }
