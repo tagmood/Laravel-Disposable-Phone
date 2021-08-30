@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'fetcher' => \Propaganistas\LaravelDisposableEmail\Fetcher\DefaultFetcher::class,
+    'fetcher' => \Tagmood\LaravelDisposablePhone\Fetcher\DefaultFetcher::class,
 
     /*
     |--------------------------------------------------------------------------

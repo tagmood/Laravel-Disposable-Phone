@@ -56,7 +56,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getPackageProviders($app)
     {
-        return ['Propaganistas\LaravelDisposableEmail\DisposableEmailServiceProvider'];
+        return ['Tagmood\LaravelDisposablePhone\DisposableEmailServiceProvider'];
     }
 
     /**
@@ -67,11 +67,11 @@ abstract class TestCase extends BaseTestCase
      */
     protected function getPackageAliases($app)
     {
-        return ['Indisposable' => 'Propaganistas\LaravelDisposableEmail\Facades\DisposableDomains'];
+        return ['Indisposable' => 'Tagmood\LaravelDisposablePhone\Facades\DisposableDomains'];
     }
 
     /**
-     * @return \Propaganistas\LaravelDisposableEmail\DisposableDomains
+     * @return \Tagmood\LaravelDisposablePhone\DisposableDomains
      */
     protected function disposable()
     {

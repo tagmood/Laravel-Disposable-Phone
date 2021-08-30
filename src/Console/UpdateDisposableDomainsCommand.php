@@ -27,7 +27,7 @@ class UpdateDisposableDomainsCommand extends Command
      * Execute the console command.
      *
      * @param  \Illuminate\Contracts\Config\Repository  $config
-     * @param  \Propaganistas\LaravelDisposableEmail\DisposableDomains  $disposable
+     * @param  \Tagmood\LaravelDisposablePhone\DisposableDomains  $disposable
      * @return  void
      */
     public function handle(Config $config, DisposableDomains $disposable)
