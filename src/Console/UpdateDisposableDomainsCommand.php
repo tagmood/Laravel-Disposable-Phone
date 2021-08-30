@@ -21,7 +21,7 @@ class UpdateDisposableNumbersCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Updates to the latest disposable email domains list';
+    protected $description = 'Updates to the latest disposable email numbers list';
 
     /**
      * Execute the console command.
@@ -50,7 +50,7 @@ class UpdateDisposableNumbersCommand extends Command
         $this->line('Saving response to storage...');
 
         if ($disposable->saveToStorage($data)) {
-            $this->info('Disposable domains list updated successfully.');
+            $this->info('Disposable numbers list updated successfully.');
             $disposable->bootstrap();
             return 0;
         } else {

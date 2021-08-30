@@ -16,11 +16,11 @@ class DisposableNumbers
     protected $storagePath;
 
     /**
-     * Array of retrieved disposable domains.
+     * Array of retrieved disposable numbers.
      *
      * @var array
      */
-    protected $domains = [];
+    protected $numbers = [];
 
     /**
      * The cache repository.
@@ -47,56 +47,56 @@ class DisposableNumbers
     }
 
     /**
-     * Loads the domains from cache/storage into the class.
+     * Loads the numbers from cache/storage into the class.
      *
      * @return $this
      */
     public function bootstrap()
     {
-        $domains = $this->getFromCache();
+        $numbers = $this->getFromCache();
 
-        if (! $domains) {
+        if (! $numbers) {
             $this->saveToCache(
-                $domains = $this->getFromStorage()
+                $numbers = $this->getFromStorage()
             );
         }
 
-        $this->domains = $domains;
+        $this->numbers = $numbers;
 
         return $this;
     }
 
     /**
-     * Get the domains from cache.
+     * Get the numbers from cache.
      *
      * @return array|null
      */
     protected function getFromCache()
     {
         if ($this->cache) {
-            $domains = $this->cache->get($this->getCacheKey());
+            $numbers = $this->cache->get($this->getCacheKey());
 
             // @TODO: Legacy code for bugfix. Remove me.
-            if (is_string($domains) || empty($domains)) {
+            if (is_string($numbers) || empty($numbers)) {
                 $this->flushCache();
                 return null;
             }
 
-            return $domains;
+            return $numbers;
         }
 
         return null;
     }
 
     /**
-     * Save the domains in cache.
+     * Save the numbers in cache.
      *
-     * @param  array|null  $domains
+     * @param  array|null  $numbers
      */
-    public function saveToCache(array $domains = null)
+    public function saveToCache(array $numbers = null)
     {
-        if ($this->cache && ! empty($domains)) {
-            $this->cache->forever($this->getCacheKey(), $domains);
+        if ($this->cache && ! empty($numbers)) {
+            $this->cache->forever($this->getCacheKey(), $numbers);
         }
     }
 
@@ -111,27 +111,27 @@ class DisposableNumbers
     }
 
     /**
-     * Get the domains from storage, or if non-existent, from the package.
+     * Get the numbers from storage, or if non-existent, from the package.
      *
      * @return array
      */
     protected function getFromStorage()
     {
-        $domains = is_file($this->getStoragePath())
+        $numbers = is_file($this->getStoragePath())
             ? file_get_contents($this->getStoragePath())
             : file_get_contents(__DIR__.'/../number-list.json');
 
-        return json_decode($domains, true);
+        return json_decode($numbers, true);
     }
 
     /**
-     * Save the domains in storage.
+     * Save the numbers in storage.
      *
-     * @param  array  $domains
+     * @param  array  $numbers
      */
-    public function saveToStorage(array $domains)
+    public function saveToStorage(array $numbers)
     {
-        $saved = file_put_contents($this->getStoragePath(), json_encode($domains));
+        $saved = file_put_contents($this->getStoragePath(), json_encode($numbers));
 
         if ($saved) {
             $this->flushCache();
@@ -159,7 +159,7 @@ class DisposableNumbers
     public function isDisposable($email)
     {
         if ($domain = Str::lower(Arr::get(explode('@', $email, 2), 1))) {
-            return in_array($domain, $this->domains);
+            return in_array($domain, $this->numbers);
         }
 
         // Just ignore this validator if the value doesn't even resemble an email or domain.
@@ -189,13 +189,13 @@ class DisposableNumbers
     }
 
     /**
-     * Get the list of disposable domains.
+     * Get the list of disposable numbers.
      *
      * @return array
      */
-    public function getDomains()
+    public function getNumbers()
     {
-        return $this->domains;
+        return $this->numbers;
     }
 
     /**

@@ -53,15 +53,15 @@ class DisposableNumbersTest extends TestCase
     }
 
     /** @test */
-    public function it_takes_cached_domains_if_available()
+    public function it_takes_cached_numbers_if_available()
     {
         $this->app['cache.store'][$this->disposable()->getCacheKey()] = ['foo'];
 
         $this->disposable()->bootstrap();
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertEquals(['foo'], $domains);
+        $this->assertEquals(['foo'], $numbers);
     }
     
     /** @test */
@@ -79,15 +79,15 @@ class DisposableNumbersTest extends TestCase
     {
         $this->app['config']['disposable-phone.cache.enabled'] = false;
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertIsArray($domains);
+        $this->assertIsArray($numbers);
         $this->assertNull($this->app['cache.store'][$this->disposable()->getCacheKey()]);
-        $this->assertContains('393399957039',  $domains);
+        $this->assertContains('393399957039',  $numbers);
     }
 
     /** @test */
-    public function it_takes_storage_domains_when_cache_is_not_available()
+    public function it_takes_storage_numbers_when_cache_is_not_available()
     {
         $this->app['config']['disposable-phone.cache.enabled'] = false;
 
@@ -95,20 +95,20 @@ class DisposableNumbersTest extends TestCase
 
         $this->disposable()->bootstrap();
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertEquals(['foo'], $domains);
+        $this->assertEquals(['foo'], $numbers);
     }
 
     /** @test */
-    public function it_takes_package_domains_when_storage_is_not_available()
+    public function it_takes_package_numbers_when_storage_is_not_available()
     {
         $this->app['config']['disposable-phone.cache.enabled'] = false;
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertIsArray($domains);
-        $this->assertContains('393399957039', $domains);
+        $this->assertIsArray($numbers);
+        $this->assertContains('393399957039', $numbers);
     }
 
     /** @test */

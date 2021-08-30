@@ -18,10 +18,10 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->assertFileExists($this->storagePath);
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertIsArray($domains);
-        $this->assertContains('393399957039', $domains);
+        $this->assertIsArray($numbers);
+        $this->assertContains('393399957039', $numbers);
     }
 
     /** @test */
@@ -34,11 +34,11 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->assertFileExists($this->storagePath);
 
-        $domains = $this->disposable()->getDomains();
+        $numbers = $this->disposable()->getNumbers();
 
-        $this->assertIsArray($domains);
-        $this->assertContains('393399957039', $domains);
-        $this->assertNotContains('foo', $domains);
+        $this->assertIsArray($numbers);
+        $this->assertContains('393399957039', $numbers);
+        $this->assertNotContains('foo', $numbers);
     }
 
     /** @test */
@@ -56,8 +56,8 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->assertFileExists($this->storagePath);
 
-        $domains = $this->disposable()->getDomains();
-        $this->assertEquals(['foo'], $domains);
+        $numbers = $this->disposable()->getNumbers();
+        $this->assertEquals(['foo'], $numbers);
     }
 
     /** @test */
@@ -73,8 +73,8 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->assertFileExists($this->storagePath);
 
-        $domains = $this->disposable()->getDomains();
-        $this->assertNotEquals(['foo'], $domains);
+        $numbers = $this->disposable()->getNumbers();
+        $this->assertNotEquals(['foo'], $numbers);
     }
 
     /** @test */
@@ -90,8 +90,8 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->assertFileExists($this->storagePath);
 
-        $domains = $this->disposable()->getDomains();
-        $this->assertEquals(['bar'], $domains);
+        $numbers = $this->disposable()->getNumbers();
+        $this->assertEquals(['bar'], $numbers);
     }
 }
 
