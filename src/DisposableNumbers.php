@@ -3,7 +3,6 @@
 namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class DisposableNumbers
@@ -131,6 +130,8 @@ class DisposableNumbers
      */
     public function saveToStorage(array $numbers)
     {
+        $numbers = array_keys($numbers);
+        
         $saved = file_put_contents($this->getStoragePath(), json_encode($numbers));
 
         if ($saved) {
@@ -158,7 +159,7 @@ class DisposableNumbers
      */
     public function isDisposable($phone)
     {
-        if ($number = Str::lower(Arr::get(explode('@', $phone, 2), 1))) {
+        if ($phone = Str::replace('+', '', $phone)) {
             return in_array($number, $this->numbers);
         }
 
