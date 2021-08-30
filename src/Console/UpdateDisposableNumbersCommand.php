@@ -14,7 +14,7 @@ class UpdateDisposableNumbersCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'disposable:update';
+    protected $signature = 'disposablephone:update';
 
     /**
      * The console command description.

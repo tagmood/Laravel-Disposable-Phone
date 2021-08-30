@@ -13,7 +13,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
     {
         $this->assertFileNotExists($this->storagePath);
 
-        $this->artisan('disposable:update')
+        $this->artisan('disposablephone:update')
             ->assertExitCode(0);
 
         $this->assertFileExists($this->storagePath);
@@ -29,7 +29,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
     {
         file_put_contents($this->storagePath, json_encode(['foo']));
 
-        $this->artisan('disposable:update')
+        $this->artisan('disposablephone:update')
             ->assertExitCode(0);
 
         $this->assertFileExists($this->storagePath);
@@ -51,7 +51,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
 
         $this->app['config']['disposable-phone.source'] = null;
 
-        $this->artisan('disposable:update')
+        $this->artisan('disposablephone:update')
             ->assertExitCode(1);
 
         $this->assertFileExists($this->storagePath);
@@ -68,7 +68,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
         $this->app['config']['disposable-phone.source'] = 'bar';
         $this->app['config']['disposable-phone.fetcher'] = InvalidFetcher::class;
 
-        $this->artisan('disposable:update')
+        $this->artisan('disposablephone:update')
             ->assertExitCode(1);
 
         $this->assertFileExists($this->storagePath);
@@ -85,7 +85,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
         $this->app['config']['disposable-phone.source'] = 'bar';
         $this->app['config']['disposable-phone.fetcher'] = CustomFetcher::class;
 
-        $this->artisan('disposable:update')
+        $this->artisan('disposablephone:update')
             ->assertExitCode(0);
 
         $this->assertFileExists($this->storagePath);
