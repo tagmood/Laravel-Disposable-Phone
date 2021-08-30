@@ -19,7 +19,7 @@ class UpdateDisposableNumbersCommandTest extends TestCase
         $this->assertFileExists($this->storagePath);
 
         $numbers = $this->disposable()->getNumbers();
-
+var_dump($numbers);
         $this->assertIsArray($numbers);
         $this->assertContains('393399957039', $numbers);
     }
