@@ -8,21 +8,21 @@ use Tagmood\LaravelDisposablePhone\Validation\Indisposable;
 class IndisposableTest extends TestCase
 {
     /** @test */
-    public function it_should_pass_for_indisposable_emails()
+    public function it_should_pass_for_indisposable_phones()
     {
         $validator = new Indisposable;
-        $email = '393491234567';
+        $phone = '393491234567';
 
-        $this->assertTrue($validator->validate(null, $email, null, null));
+        $this->assertTrue($validator->validate(null, $phone, null, null));
     }
 
     /** @test */
-    public function it_should_fail_for_disposable_emails()
+    public function it_should_fail_for_disposable_phones()
     {
         $validator = new Indisposable;
-        $email = '393399957039';
+        $phone = '393399957039';
 
-        $this->assertFalse($validator->validate(null, $email, null, null));
+        $this->assertFalse($validator->validate(null, $phone, null, null));
     }
 
     /** @test */

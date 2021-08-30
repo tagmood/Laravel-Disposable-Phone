@@ -151,41 +151,41 @@ class DisposableNumbers
     }
 
     /**
-     * Checks whether the given email address' domain matches a disposable email service.
+     * Checks whether the given phone address' domain matches a disposable phone service.
      *
-     * @param string $email
+     * @param string $phone
      * @return bool
      */
-    public function isDisposable($email)
+    public function isDisposable($phone)
     {
-        if ($domain = Str::lower(Arr::get(explode('@', $email, 2), 1))) {
+        if ($domain = Str::lower(Arr::get(explode('@', $phone, 2), 1))) {
             return in_array($domain, $this->numbers);
         }
 
-        // Just ignore this validator if the value doesn't even resemble an email or domain.
+        // Just ignore this validator if the value doesn't even resemble an phone or domain.
         return false;
     }
 
     /**
-     * Checks whether the given email address' domain doesn't match a disposable email service.
+     * Checks whether the given phone address' domain doesn't match a disposable phone service.
      *
-     * @param string $email
+     * @param string $phone
      * @return bool
      */
-    public function isNotDisposable($email)
+    public function isNotDisposable($phone)
     {
-        return ! $this->isDisposable($email);
+        return ! $this->isDisposable($phone);
     }
 
     /**
      * Alias of "isNotDisposable".
      *
-     * @param string $email
+     * @param string $phone
      * @return bool
      */
-    public function isIndisposable($email)
+    public function isIndisposable($phone)
     {
-        return $this->isNotDisposable($email);
+        return $this->isNotDisposable($phone);
     }
 
     /**

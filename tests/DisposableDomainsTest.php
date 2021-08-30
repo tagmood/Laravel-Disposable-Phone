@@ -154,7 +154,7 @@ class DisposableNumbersTest extends TestCase
     }
 
     /** @test */
-    public function it_checks_the_full_email_domain()
+    public function it_checks_the_full_phone_domain()
     {
         $this->assertTrue($this->disposable()->isDisposable('example@mailinator.com'));
         $this->assertTrue($this->disposable()->isDisposable('example@mail.mailinator.com'));

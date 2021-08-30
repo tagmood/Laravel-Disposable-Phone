@@ -7,7 +7,7 @@ return [
     | JSON Source URL
     |--------------------------------------------------------------------------
     |
-    | The source URL yielding a list of disposable email numbers. Change this
+    | The source URL yielding a list of disposable phone numbers. Change this
     | to whatever source you like. Just make sure it returns a JSON array.
     |
     | A sensible default is provided using jsDelivr's services. jsDelivr is

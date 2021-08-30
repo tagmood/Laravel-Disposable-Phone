@@ -11,10 +11,10 @@ class Indisposable
      *
      * @var string
      */
-    public static $errorMessage = 'Disposable email addresses are not allowed.';
+    public static $errorMessage = 'Disposable phone addresses are not allowed.';
 
     /**
-     * Validates whether an email address does not originate from a disposable email service.
+     * Validates whether an phone address does not originate from a disposable phone service.
      *
      * @param string $attribute
      * @param mixed $value

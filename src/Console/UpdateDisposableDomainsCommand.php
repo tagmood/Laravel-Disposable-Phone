@@ -21,7 +21,7 @@ class UpdateDisposableNumbersCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Updates to the latest disposable email numbers list';
+    protected $description = 'Updates to the latest disposable phone numbers list';
 
     /**
      * Execute the console command.
