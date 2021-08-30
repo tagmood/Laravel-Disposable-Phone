@@ -83,7 +83,7 @@ class DisposableNumbersTest extends TestCase
 
         $this->assertIsArray($numbers);
         $this->assertNull($this->app['cache.store'][$this->disposable()->getCacheKey()]);
-        $this->assertContains('393399957039',  $numbers);
+        $this->assertArrayHasKey('393399957039',  $numbers);
     }
 
     /** @test */
@@ -108,7 +108,7 @@ class DisposableNumbersTest extends TestCase
         $numbers = $this->disposable()->getNumbers();
 
         $this->assertIsArray($numbers);
-        $this->assertContains('393399957039', $numbers);
+        $this->assertArrayHasKey('393399957039', $numbers);
     }
 
     /** @test */
