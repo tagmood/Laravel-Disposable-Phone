@@ -1,10 +1,10 @@
 {
-    "name": "propaganistas/laravel-disposable-email",
-    "description": "Disposable email validator",
+    "name": "tagmood/laravel-disposable-phone",
+    "description": "Disposable phone validator",
     "keywords": [
         "laravel",
-        "mail",
-        "email",
+        "phone",
+        "mobile",
         "disposable",
         "throwaway",
         "temporary",
@@ -13,8 +13,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Propaganistas",
-            "email": "Propaganistas@users.noreply.github.com"
+            "name": "Tagmood",
+            "email": "Tagmood@users.noreply.github.com"
         }
     ],
     "require": {
@@ -34,14 +34,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Propaganistas\\LaravelDisposableEmail\\": "src/",
-            "Propaganistas\\LaravelDisposableEmail\\Tests\\": "tests/"
+            "Tagmood\\LaravelDisposablePhone\\": "src/",
+            "Tagmood\\LaravelDisposablePhone\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Propaganistas\\LaravelDisposableEmail\\DisposableEmailServiceProvider"
+                "Tagmood\\LaravelDisposablePhone\\DisposableEmailServiceProvider"
             ]
         }
     }
