@@ -11,7 +11,7 @@ class Indisposable
      *
      * @var string
      */
-    public static $errorMessage = 'Disposable phone addresses are not allowed.';
+    public static $errorMessage = 'Disposable phone numbers are not allowed.';
 
     /**
      * Validates whether an phone address does not originate from a disposable phone service.
