@@ -50,10 +50,10 @@ Uses the disposable numbers blacklist from [iP1SMS/disposable-phone-numbers](htt
 
 ### Usage
 
-Use the `indisposablephone` validator to ensure a given field doesn't hold a disposable phone number. You'll probably want to add it after the `phone` validator to make sure a valid phone number is passed through:
+Use the `indisposablephone` validator to ensure a given field doesn't hold a disposable phone number.
 
 ```php
-'field' => 'phone|indisposablephone',
+'field' => 'indisposablephone',
 ```
 
 ### Custom fetches
