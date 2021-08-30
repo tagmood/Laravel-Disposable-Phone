@@ -1,9 +1,9 @@
 <?php
 
-namespace Tagmood\LaravelDisposablePhone\Fetcher;
+namespace Propaganistas\LaravelDisposableEmail\Fetcher;
 
 use InvalidArgumentException;
-use Tagmood\LaravelDisposablePhone\Contracts\Fetcher;
+use Propaganistas\LaravelDisposableEmail\Contracts\Fetcher;
 use UnexpectedValueException;
 
 class DefaultFetcher implements Fetcher
@@ -24,7 +24,7 @@ class DefaultFetcher implements Fetcher
             throw new UnexpectedValueException('Provided data could not be parsed as JSON');
         }
 
-        return array_keys(json_decode($content, true));
+        return json_decode($content, true);
     }
 
     protected function isValidJson($data): bool

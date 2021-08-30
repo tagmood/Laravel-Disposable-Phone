@@ -3,6 +3,7 @@
 namespace Tagmood\LaravelDisposablePhone;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
+use Illuminate\Support\Str;
 
 class DisposableNumbers
 {
@@ -59,7 +60,7 @@ class DisposableNumbers
             );
         }
 
-        $this->numbers = $numbers;
+        $this->numbers = array_keys($numbers);
 
         return $this;
     }
@@ -115,12 +116,11 @@ class DisposableNumbers
      */
     protected function getFromStorage()
     {
-        if(is_file($this->getStoragePath())) {
-            return json_decode(file_get_contents($this->getStoragePath()), true);
-        }
-        else {
-            return array_keys(json_decode(file_get_contents(__DIR__.'/../number-list.json'), true));
-        }
+        $numbers = is_file($this->getStoragePath())
+            ? file_get_contents($this->getStoragePath())
+            : file_get_contents(__DIR__.'/../number-list.json');
+
+        return json_decode($numbers, true);
     }
 
     /**
@@ -157,7 +157,7 @@ class DisposableNumbers
      */
     public function isDisposable($phone)
     {
-        if ($phone = str_replace('+', '', $phone)) {
+        if ($phone = Str::replace('+', '', $phone)) {
             return in_array($phone, $this->numbers);
         }
 
