@@ -129,9 +129,7 @@ class DisposableNumbers
      * @param  array  $numbers
      */
     public function saveToStorage(array $numbers)
-    {
-        $numbers = array_keys($numbers);
-        
+    {        
         $saved = file_put_contents($this->getStoragePath(), json_encode($numbers));
 
         if ($saved) {
