@@ -9,7 +9,7 @@ class DisposableNumbersTest extends TestCase
     /** @test */
     public function it_can_be_resolved_using_alias()
     {
-        $this->assertEquals(DisposableNumbers::class, get_class($this->app->make('disposable_email.domains')));
+        $this->assertEquals(DisposableNumbers::class, get_class($this->app->make('disposable_phone.numbers')));
     }
 
     /** @test */

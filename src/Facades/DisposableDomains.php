@@ -13,6 +13,6 @@ class DisposableNumbers extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'disposable_email.domains';
+        return 'disposable_phone.numbers';
     }
 }

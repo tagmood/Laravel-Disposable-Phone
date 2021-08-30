@@ -75,6 +75,6 @@ abstract class TestCase extends BaseTestCase
      */
     protected function disposable()
     {
-        return $this->app['disposable_email.domains'];
+        return $this->app['disposable_phone.numbers'];
     }
 }

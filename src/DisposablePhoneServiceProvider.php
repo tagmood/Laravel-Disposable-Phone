@@ -42,7 +42,7 @@ class DisposablePhoneServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom($this->config, 'disposable-phone');
 
-        $this->app->singleton('disposable_email.domains', function ($app) {
+        $this->app->singleton('disposable_phone.numbers', function ($app) {
             // Only build and pass the requested cache store if caching is enabled.
             if ($app['config']['disposable-phone.cache.enabled']) {
                 $store = $app['config']['disposable-phone.cache.store'];
@@ -57,6 +57,6 @@ class DisposablePhoneServiceProvider extends ServiceProvider
             return $instance->bootstrap();
         });
 
-        $this->app->alias('disposable_email.domains', DisposableNumbers::class);
+        $this->app->alias('disposable_phone.numbers', DisposableNumbers::class);
     }
 }
